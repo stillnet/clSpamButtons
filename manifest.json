@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Craigslist Spam Buttons",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["clspambuttons.css"],
+      "js": ["jquery-1.9.1.js", "clspambuttons.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "description": "Adds links to flag ads as spam directly from the listing page."
+}
