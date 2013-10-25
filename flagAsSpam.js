@@ -1,6 +1,6 @@
 flagAsSpam = function(element,ad_url) {
 	$(element).css('text-decoration','line-through');
-	$('h4.ban').after('<iframe id="clsb_frame" style="display:none;" src="JavaScript:"></iframe>')
+	$('h4.ban').after('<iframe id="clsb_frame" style="display:none;" src="JavaScript:"><script>document.domain="craigslist.org"</script></iframe>')
 	$('#clsb_frame').load( window.top.waitForSpamLink())
 	$('#clsb_frame').attr('src', ad_url )
 	}
@@ -18,8 +18,13 @@ waitForSpamLink = function() {
 	else {
 		console.log('its here now!');
 		spamLink.get()[0].click();
+		// clean up the iframe in a second
+		//setTimeout(function() { cleanUp() }cleanUp,1000);
 	}
 
 
 }
 
+cleanUp = function() {
+
+}
